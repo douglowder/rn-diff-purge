@@ -31,9 +31,10 @@ Probably having some nice alternating row color, having the leftest column stay 
 
 ## Diff table (full table [HERE](https://react-native-community.github.io/rn-diff-purge/))
 
-| From->To | R   | E   | A   | C   | T   |     | N   | A   | T   | I   | V   | E   |
-| -------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0.60.4-0 | X   |     |     |     |     |     |     |     |     |     |     |     |
+| From->To | R                                                                                                       | E   | A   | C   | T   |     | N   | A   | T   | I   | V   | E   |
+| -------- | ------------------------------------------------------------------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.60.4-1 | X                                                                                                       | -   |     |     |     |     |     |     |     |     |     |     |
+| 0.60.4-0 | [->0.60.4-1](https://github.com/douglowder/rn-diff-purge-tv/compare/release/0.60.4-0..release/0.60.4-1) | X   |     |     |     |     |     |     |     |     |     |     |
 
 ## To see the full table containing all releases click [HERE](https://react-native-community.github.io/rn-diff-purge/)
 
