@@ -51,7 +51,7 @@ function generateNewReleaseBranch () {
     git checkout -b "$branchName"
 
     # generate app
-   npx @react-native-community/cli init "$AppName" --version "$newRelease"
+   npx @react-native-community/cli init "$AppName" --template react-native-tvos@"$newRelease"
 
     # commit and push branch
     git add "$AppName"
@@ -83,10 +83,12 @@ function generateDiffs () {
     if [ ! -d wt-diffs ]; then
         git worktree add wt-diffs diffs
     fi
-
     cd wt-diffs
     git pull
     cd ..
+    if [ ! -d wt-diffs/diffs ]; then
+      mkdir wt-diffs/diffs
+    fi
 
     IFS=$'\n' GLOBIGNORE='*' command eval 'releases=($(cat "$ReleasesFile"))'
     for existingRelease in "${releases[@]}"

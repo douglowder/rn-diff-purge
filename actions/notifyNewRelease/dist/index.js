@@ -2938,8 +2938,8 @@ const core = __webpack_require__(470);
 const github = __webpack_require__(469);
 
 const repositoryData = {
-    owner: 'react-native-community',
-    repo: 'rn-diff-purge',
+    owner: 'douglowder',
+    repo: 'rn-diff-purge-tv',
 };
 
 const releasesFileName = 'RELEASES';

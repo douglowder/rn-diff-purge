@@ -6,7 +6,7 @@ const semver = require('semver')
 const getStdin = require('get-stdin')
 
 
-const RepoUrl='https://github.com/react-native-community/rn-diff-purge'
+const RepoUrl='https://github.com/douglowder/rn-diff-purge-tv'
 
 
 const generateTable = async () => {
@@ -40,7 +40,7 @@ const generateTable = async () => {
                             return '-'
                         }
                         return isBig
-                            ? `[->${toRelease}](${RepoUrl}/compare/release/${fromRelease}..release/${toRelease}) [core](https://github.com/facebook/react-native/compare/v${fromRelease}...v${toRelease})`
+                            ? `[->${toRelease}](${RepoUrl}/compare/release/${fromRelease}..release/${toRelease}) [core](https://github.com/react-native-tvos/react-native-tvos/compare/v${fromRelease}...v${toRelease})`
                             : `[->${toRelease}](${RepoUrl}/compare/release/${fromRelease}..release/${toRelease})`
                     }),
                 )(R.range(0, length)),

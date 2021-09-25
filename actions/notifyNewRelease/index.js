@@ -2,8 +2,8 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 const repositoryData = {
-    owner: 'react-native-community',
-    repo: 'rn-diff-purge',
+    owner: 'douglowder',
+    repo: 'rn-diff-purge-tv',
 };
 
 const releasesFileName = 'RELEASES';
