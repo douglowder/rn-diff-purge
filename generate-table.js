@@ -6,7 +6,7 @@ const semver = require('semver')
 const getStdin = require('get-stdin')
 
 
-const RepoUrl='https://github.com/douglowder/rn-diff-purge-tv'
+const RepoUrl='https://github.com/react-native-tvos/rn-diff-purge-tv'
 
 
 const generateTable = async () => {
