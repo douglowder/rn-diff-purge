@@ -1,0 +1,6 @@
+git branch -D release/0.60.4-0; git push origin -d release/0.60.4-0
+git branch -D release/0.60.4-1; git push origin -d release/0.60.4-1
+git branch -D release/0.60.4-2; git push origin -d release/0.60.4-2
+git branch -D release/0.60.4-3; git push origin -d release/0.60.4-3
+git branch -D release/0.60.4-4; git push origin -d release/0.60.4-4
+git branch -D release/0.60.4-5; git push origin -d release/0.60.4-5
