@@ -4,6 +4,7 @@ set -euxo pipefail
 
 ErrorReleaseExists=2
 ErrorReleaseArgMissing=3
+ErrorReleaseTagExists=4
 
 AppName=RnDiffApp
 AppBaseBranch=app-base
@@ -26,6 +27,10 @@ function guardExisting () {
     if grep -qFx "$newRelease" "$ReleasesFile"; then
         echo "Release $newRelease already exists!"
         exit "$ErrorReleaseExists"
+    fi
+    if [ $(git tag -l "version/$newRelease") ]; then
+        echo "Release tag version/$newRelease already exists!"
+        exit "$ErrorReleaseTagExists"
     fi
 }
 
@@ -51,13 +56,14 @@ function generateNewReleaseBranch () {
     git checkout -b "$branchName"
 
     # generate app
-   npx @react-native-community/cli init "$AppName" --template react-native-tvos@"$newRelease"
+   npx react-native init "$AppName" --template react-native-tvos@"$newRelease" --skip-install
 
     # commit and push branch
     git add "$AppName"
     git commit -m "Release $newRelease"
     git push origin --delete "$branchName" || git push origin "$branchName"
-    git push --set-upstream origin "$branchName"
+    git tag "version/$newRelease" # @react-native-community/cli needs this
+    git push --set-upstream origin "$branchName" --tags
 
     # go back to master
     cd ..
@@ -112,11 +118,11 @@ function pushMaster () {
 }
 
 function generateTable () {
-    head -n "$NumberOfReleases" "$ReleasesFile" | ./generate-table.js > "$ReadmeTable"
+    head -n "$NumberOfReleases" "$ReleasesFile" | ./generate-table.mjs > "$ReadmeTable"
 }
 
 function generateBigTable () {
-    cat "$ReleasesFile" | ./generate-table.js --big > "$ReadmeTableBig"
+    cat "$ReleasesFile" | ./generate-table.mjs --big > "$ReadmeTableBig"
 }
 
 ReadmeHeader=README_HEADER.md
