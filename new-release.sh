@@ -118,11 +118,11 @@ function pushMaster () {
 }
 
 function generateTable () {
-    head -n "$NumberOfReleases" "$ReleasesFile" | ./generate-table.mjs > "$ReadmeTable"
+    head -n "$NumberOfReleases" "$ReleasesFile" | ./generate-table.js > "$ReadmeTable"
 }
 
 function generateBigTable () {
-    cat "$ReleasesFile" | ./generate-table.mjs --big > "$ReadmeTableBig"
+    cat "$ReleasesFile" | ./generate-table.js --big > "$ReadmeTableBig"
 }
 
 ReadmeHeader=README_HEADER.md

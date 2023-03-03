@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import { markdownTable } from "markdown-table"
-import { map, pipe, range, dropLast, includes, split } from "ramda"
-import semver from "semver"
-import getStdin from "get-stdin"
+const markdownTable = require("markdown-table")
+const { map, pipe, range, dropLast, includes, split } = require("ramda")
+const semver = require("semver")
+const getStdin = require("get-stdin")
 
 const RepoUrl = "https://github.com/react-native-tvos/rn-diff-purge-tv"
 
