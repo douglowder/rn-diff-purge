@@ -1,0 +1,33 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+
+target 'RnDiffApp' do
+
+  platform :ios, '10.0'
+
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+
+  target 'RnDiffAppTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+end
+
+target 'RnDiffApp-tvOS' do
+
+  platform :tvos, '12.0'
+
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+
+  target 'RnDiffApp-tvOSTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+end
