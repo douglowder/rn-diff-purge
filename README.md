@@ -8,14 +8,8 @@ This repository exposes an untouched React Native app generated with the CLI
 A dedicated branch per release makes changes very easy
 to watch. For example:
 
-* https://github.com/react-native-community/rn-diff-purge/compare/release/0.28.0..release/0.29.0
-(Change in Android template)
-* https://github.com/react-native-community/rn-diff-purge/compare/release/0.29.0..release/0.29.2
-(no change)
-* https://github.com/react-native-community/rn-diff-purge/compare/release/0.30.0..release/0.31.0
-(minor change in `.flowconfig` )
-* https://github.com/react-native-community/rn-diff-purge/compare/release/0.30.0..release/0.31.0
-(minor change in `.flowconfig` )
+* https://github.com/react-native-tvos/rn-diff-purge-tv/compare/release/0.69.6-1..release/0.69.6-3
+* https://github.com/react-native-tvos/rn-diff-purge-tv/compare/release/0.69.6-2..release/0.69.6-3
 
 See table below for the complete list.
 
@@ -27,11 +21,11 @@ Please :star: this repository if I helped you, and if you upgraded successfully 
 https://react-native-community.github.io/upgrade-helper/
 
 ## Help us
-Help us make [this](https://react-native-community.github.io/rn-diff-purge) full table pretty and more useful.
+Help us make [this](https://react-native-tvos.github.io/rn-diff-purge-tv) full table pretty and more useful.
 
 Probably having some nice alternating row color, having the leftest column stay on top and always visible, and having a nice width for the content of each cell to fit in one line would be some ideas, but you are welcome to try other things!
 
-## Diff table (full table [HERE](https://react-native-community.github.io/rn-diff-purge/))
+## Diff table (full table [HERE](https://react-native-tvos.github.io/rn-diff-purge-tv/))
 
 | From->To | P                                                                                                              | U                                                                                                              | R                                                                                                              | G                                                                                                              | E                                                                                                              |                                                                                                                | T                                                                                                              | I                                                                                                              | M                                                                                                              | E                                                                                                              | !                                                                                                              | !   |
 | -------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | --- |
