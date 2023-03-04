@@ -1,0 +1,48 @@
+diff --git a/RnDiffApp/android/gradle.properties b/RnDiffApp/android/gradle.properties
+index b5b17fb91..fa4feae5f 100644
+--- a/RnDiffApp/android/gradle.properties
++++ b/RnDiffApp/android/gradle.properties
+@@ -10,7 +10,7 @@
+ # Specifies the JVM arguments used for the daemon process.
+ # The setting is particularly useful for tweaking memory settings.
+ # Default value: -Xmx512m -XX:MaxMetaspaceSize=256m
+-org.gradle.jvmargs=-Xmx4096m -XX:MaxMetaspaceSize=1024m
++org.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m
+ 
+ # When configured, Gradle will run in incubating parallel mode.
+ # This option should only be used with decoupled projects. More details, visit
+diff --git a/RnDiffApp/ios/Podfile b/RnDiffApp/ios/Podfile
+index 51c8753e4..ea1934a66 100644
+--- a/RnDiffApp/ios/Podfile
++++ b/RnDiffApp/ios/Podfile
+@@ -7,7 +7,7 @@ install! 'cocoapods', :deterministic_uuids => false
+ 
+ target 'RnDiffApp' do
+ 
+-  platform :ios, '12.4'
++  platform :ios, '12.0'
+ 
+   config = use_native_modules!
+ 
+@@ -31,7 +31,7 @@ end
+ 
+ target 'RnDiffApp-tvOS' do
+ 
+-  platform :tvos, '12.4'
++  platform :tvos, '12.0'
+ 
+   config = use_native_modules!
+ 
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 167eeeb63..3807ec1cd 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,7 +11,7 @@
+   },
+   "dependencies": {
+     "react": "17.0.2",
+-    "react-native": "npm:react-native-tvos@0.68.2-7"
++    "react-native": "npm:react-native-tvos@0.68.2-3"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.12.9",
