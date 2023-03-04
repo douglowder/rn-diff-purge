@@ -1,0 +1,35 @@
+diff --git a/RnDiffApp/ios/Podfile b/RnDiffApp/ios/Podfile
+index 51c8753e4..ea1934a66 100644
+--- a/RnDiffApp/ios/Podfile
++++ b/RnDiffApp/ios/Podfile
+@@ -7,7 +7,7 @@ install! 'cocoapods', :deterministic_uuids => false
+ 
+ target 'RnDiffApp' do
+ 
+-  platform :ios, '12.4'
++  platform :ios, '12.0'
+ 
+   config = use_native_modules!
+ 
+@@ -31,7 +31,7 @@ end
+ 
+ target 'RnDiffApp-tvOS' do
+ 
+-  platform :tvos, '12.4'
++  platform :tvos, '12.0'
+ 
+   config = use_native_modules!
+ 
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 496bed761..26a083ac4 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,7 +11,7 @@
+   },
+   "dependencies": {
+     "react": "17.0.2",
+-    "react-native": "npm:react-native-tvos@0.68.2-6"
++    "react-native": "npm:react-native-tvos@0.68.2-1"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.12.9",
