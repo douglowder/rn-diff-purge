@@ -33,10 +33,11 @@ Probably having some nice alternating row color, having the leftest column stay 
 
 ## Diff table (full table [HERE](https://react-native-community.github.io/rn-diff-purge/))
 
-| From->To | I                                                                                                              |     | L   | O   | V   | E   |     | D   | I   | F   | F   | S   |
-| -------- | -------------------------------------------------------------------------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0.60.4-1 | X                                                                                                              | -   |     |     |     |     |     |     |     |     |     |     |
-| 0.60.4-0 | [->0.60.4-1](https://github.com/react-native-tvos/rn-diff-purge-tv/compare/release/0.60.4-0..release/0.60.4-1) | X   |     |     |     |     |     |     |     |     |     |     |
+| From->To | R                                                                                                              | N                                                                                                              |     | C   | O   | R   | E   |     | T   | E   | A   | M   |
+| -------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.60.4-2 | X                                                                                                              | -                                                                                                              | -   |     |     |     |     |     |     |     |     |     |
+| 0.60.4-1 | [->0.60.4-2](https://github.com/react-native-tvos/rn-diff-purge-tv/compare/release/0.60.4-1..release/0.60.4-2) | X                                                                                                              | -   |     |     |     |     |     |     |     |     |     |
+| 0.60.4-0 | [->0.60.4-2](https://github.com/react-native-tvos/rn-diff-purge-tv/compare/release/0.60.4-0..release/0.60.4-2) | [->0.60.4-1](https://github.com/react-native-tvos/rn-diff-purge-tv/compare/release/0.60.4-0..release/0.60.4-1) | X   |     |     |     |     |     |     |     |     |     |
 
 ## To see the full table containing all releases click [HERE](https://react-native-community.github.io/rn-diff-purge/)
 
