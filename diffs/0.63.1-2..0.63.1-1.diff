@@ -1,0 +1,26 @@
+diff --git a/RnDiffApp/ios/Podfile b/RnDiffApp/ios/Podfile
+index d1ca6c9c9..397041f0f 100644
+--- a/RnDiffApp/ios/Podfile
++++ b/RnDiffApp/ios/Podfile
+@@ -1,7 +1,7 @@
+ require_relative '../node_modules/react-native/scripts/react_native_pods'
+ require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+ 
+-source 'https://github.com/react-native-tvos/react-native-tvos-podspecs.git'
++source 'https://github.com/react-native-community/react-native-tvos-podspecs.git'
+ source 'https://cdn.cocoapods.org/'
+ 
+ target 'RnDiffApp' do
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 30f2a14d2..76d082544 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,7 +11,7 @@
+   },
+   "dependencies": {
+     "react": "16.13.1",
+-    "react-native": "npm:react-native-tvos@0.63.1-2"
++    "react-native": "npm:react-native-tvos@0.63.1-1"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.8.4",
