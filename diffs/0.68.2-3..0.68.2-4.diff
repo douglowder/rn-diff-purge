@@ -1,0 +1,13 @@
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 3807ec1cd..314760420 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,7 +11,7 @@
+   },
+   "dependencies": {
+     "react": "17.0.2",
+-    "react-native": "npm:react-native-tvos@0.68.2-3"
++    "react-native": "npm:react-native-tvos@0.68.2-4"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.12.9",
