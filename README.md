@@ -8,7 +8,7 @@ This repository exposes an untouched React Native app generated with the CLI
 A dedicated branch per release makes changes very easy
 to watch. For example:
 
-* https://github.com/react-native-tvos/rn-diff-purge-tv/compare/release/0.69.6-1..release/0.69.6-3
+* https://github.com/react-native-tvos/rn-diff-purge-tv/compare/release/0.68.2-0..release/0.69.6-3
 * https://github.com/react-native-tvos/rn-diff-purge-tv/compare/release/0.69.6-2..release/0.69.6-3
 
 See table below for the complete list.
