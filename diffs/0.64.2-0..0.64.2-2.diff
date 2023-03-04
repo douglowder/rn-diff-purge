@@ -1,0 +1,34 @@
+diff --git a/RnDiffApp/App.js b/RnDiffApp/App.js
+index e5a393085..a378982ee 100644
+--- a/RnDiffApp/App.js
++++ b/RnDiffApp/App.js
+@@ -12,6 +12,7 @@ import ReactNative, {
+   Platform,
+   SafeAreaView,
+   ScrollView,
++  StatusBar,
+   StyleSheet,
+   Text,
+   useColorScheme,
+@@ -26,8 +27,6 @@ import {
+   ReloadInstructions,
+ } from 'react-native/Libraries/NewAppScreen';
+ 
+-const StatusBar = Platform.isTV ? View : ReactNative.StatusBar;
+-
+ const Section = ({children, title}): Node => {
+   const isDarkMode = useColorScheme() === 'dark';
+   return (
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 392deefe6..1dbd43453 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,7 +11,7 @@
+   },
+   "dependencies": {
+     "react": "17.0.1",
+-    "react-native": "npm:react-native-tvos@0.64.2-0"
++    "react-native": "npm:react-native-tvos@0.64.2-2"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.12.9",
