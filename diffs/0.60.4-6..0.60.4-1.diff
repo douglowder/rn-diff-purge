@@ -1,0 +1,94 @@
+diff --git a/RnDiffApp/App.js b/RnDiffApp/App.js
+index 422628b9d..a0076ec35 100644
+--- a/RnDiffApp/App.js
++++ b/RnDiffApp/App.js
+@@ -13,6 +13,7 @@ import {
+   ScrollView,
+   View,
+   Text,
++  StatusBar,
+ } from 'react-native';
+ 
+ import {
+@@ -26,6 +27,7 @@ import {
+ const App = () => {
+   return (
+     <Fragment>
++      <StatusBar barStyle="dark-content" />
+       <SafeAreaView>
+         <ScrollView
+           contentInsetAdjustmentBehavior="automatic"
+diff --git a/RnDiffApp/ios/Podfile b/RnDiffApp/ios/Podfile
+index d1336fa24..22c58454e 100644
+--- a/RnDiffApp/ios/Podfile
++++ b/RnDiffApp/ios/Podfile
+@@ -1,7 +1,7 @@
++platform :ios, '9.0'
+ require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+ 
+ target 'RnDiffApp' do
+-  platform :ios, '12.0'
+   # Pods for RnDiffApp
+   pod 'React', :path => '../node_modules/react-native/'
+   pod 'React-Core', :path => '../node_modules/react-native/React'
+@@ -28,45 +28,20 @@ target 'RnDiffApp' do
+   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+ 
+-  use_native_modules!
+   target 'RnDiffAppTests' do
+     inherit! :search_paths
+     # Pods for testing
+   end
+ 
++  use_native_modules!
+ end
+ 
+ target 'RnDiffApp-tvOS' do
+-  platform :tvos, '12.0'
+-  # Pods for RnDiffApp
+-  pod 'React', :path => '../node_modules/react-native/'
+-  pod 'React-Core', :path => '../node_modules/react-native/React'
+-  pod 'React-DevSupport', :path => '../node_modules/react-native/React'
+-  pod 'React-fishhook', :path => '../node_modules/react-native/Libraries/fishhook'
+-  pod 'React-RCTAnimation', :path => '../node_modules/react-native/Libraries/NativeAnimation'
+-  pod 'React-RCTBlob', :path => '../node_modules/react-native/Libraries/Blob'
+-  pod 'React-RCTImage', :path => '../node_modules/react-native/Libraries/Image'
+-  pod 'React-RCTLinking', :path => '../node_modules/react-native/Libraries/LinkingIOS'
+-  pod 'React-RCTNetwork', :path => '../node_modules/react-native/Libraries/Network'
+-  pod 'React-RCTSettings', :path => '../node_modules/react-native/Libraries/Settings'
+-  pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text'
+-  pod 'React-RCTWebSocket', :path => '../node_modules/react-native/Libraries/WebSocket'
+-
+-  pod 'React-cxxreact', :path => '../node_modules/react-native/ReactCommon/cxxreact'
+-  pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
+-  pod 'React-jsiexecutor', :path => '../node_modules/react-native/ReactCommon/jsiexecutor'
+-  pod 'React-jsinspector', :path => '../node_modules/react-native/ReactCommon/jsinspector'
+-  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
++  # Pods for RnDiffApp-tvOS
+ 
+-  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+-  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+-  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+-
+-  use_native_modules!
+   target 'RnDiffApp-tvOSTests' do
+     inherit! :search_paths
+     # Pods for testing
+   end
+ 
+ end
+-
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 13cb54569..7ac0c2549 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -8,7 +8,7 @@
+   },
+   "dependencies": {
+     "react": "16.8.6",
+-    "react-native": "npm:react-native-tvos@0.60.4-6"
++    "react-native": "0.60.4"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.5.0",
