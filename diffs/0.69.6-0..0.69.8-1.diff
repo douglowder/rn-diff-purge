@@ -1,0 +1,46 @@
+diff --git a/RnDiffApp/.ruby-version b/RnDiffApp/.ruby-version
+index 743af5e12..1f7da99d4 100644
+--- a/RnDiffApp/.ruby-version
++++ b/RnDiffApp/.ruby-version
+@@ -1 +1 @@
+-2.6.8
++2.7.7
+diff --git a/RnDiffApp/Gemfile b/RnDiffApp/Gemfile
+index f7cca11f0..0ec69cc1f 100644
+--- a/RnDiffApp/Gemfile
++++ b/RnDiffApp/Gemfile
+@@ -1,6 +1,6 @@
+ source 'https://rubygems.org'
+ 
+ # You may use http://rbenv.org/ or https://rvm.io/ to install and use this version
+-ruby '2.6.8'
++ruby '2.7.7'
+ 
+-gem 'cocoapods', '~> 1.11', '>= 1.11.2'
++gem 'cocoapods', '~> 1.11', '>= 1.11.3'
+diff --git a/RnDiffApp/ios/Podfile b/RnDiffApp/ios/Podfile
+index c2a674fc6..dc52b7307 100644
+--- a/RnDiffApp/ios/Podfile
++++ b/RnDiffApp/ios/Podfile
+@@ -47,7 +47,7 @@ target 'RnDiffApp-tvOS' do
+     # Hermes not yet available on tvOS
+     :hermes_enabled => false,
+     :fabric_enabled => flags[:fabric_enabled],
+-    # An abosolute path to your application root.
++    # An absolute path to your application root.
+     :app_path => "#{Dir.pwd}/.."
+   )
+ 
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 4713b320c..5f0d5a7e6 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,7 +11,7 @@
+   },
+   "dependencies": {
+     "react": "18.0.0",
+-    "react-native": "npm:react-native-tvos@0.69.6-0"
++    "react-native": "npm:react-native-tvos@0.69.8-1"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.12.9",

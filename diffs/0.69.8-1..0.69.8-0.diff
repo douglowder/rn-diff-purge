@@ -1,0 +1,26 @@
+diff --git a/RnDiffApp/ios/Podfile b/RnDiffApp/ios/Podfile
+index dc52b7307..c2a674fc6 100644
+--- a/RnDiffApp/ios/Podfile
++++ b/RnDiffApp/ios/Podfile
+@@ -47,7 +47,7 @@ target 'RnDiffApp-tvOS' do
+     # Hermes not yet available on tvOS
+     :hermes_enabled => false,
+     :fabric_enabled => flags[:fabric_enabled],
+-    # An absolute path to your application root.
++    # An abosolute path to your application root.
+     :app_path => "#{Dir.pwd}/.."
+   )
+ 
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 5f0d5a7e6..8b06ac13e 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,7 +11,7 @@
+   },
+   "dependencies": {
+     "react": "18.0.0",
+-    "react-native": "npm:react-native-tvos@0.69.8-1"
++    "react-native": "npm:react-native-tvos@0.69.8-0"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.12.9",
