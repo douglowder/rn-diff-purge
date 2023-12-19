@@ -1,0 +1,127 @@
+diff --git a/RnDiffApp/ios/Podfile b/RnDiffApp/ios/Podfile
+index 8fe0e54e3..8220395c1 100644
+--- a/RnDiffApp/ios/Podfile
++++ b/RnDiffApp/ios/Podfile
+@@ -3,6 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
+ 
+ source 'https://github.com/react-native-tvos/react-native-tvos-podspecs.git'
+ source 'https://cdn.cocoapods.org/'
++install! 'cocoapods', :deterministic_uuids => false
+ prepare_react_native_project!
+ 
+ production = ENV["PRODUCTION"] == "1"
+@@ -16,17 +17,6 @@ target 'RnDiffApp' do
+   # Flags change depending on the env values.
+   flags = get_default_flags()
+ 
+-  # If you are using a `react-native-flipper` your iOS build will fail when `NO_FLIPPER=1` is set.
+-  # because `react-native-flipper` depends on (FlipperKit,...) that will be excluded
+-  #
+-  # To fix this you can also exclude `react-native-flipper` using a `react-native.config.js`
+-  # ```js
+-  # module.exports = {
+-  #   dependencies: {
+-  #     ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),
+-  # ```
+-  flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
+-
+   use_react_native!(
+     :path => config[:reactNativePath],
+     # Hermes is now enabled by default. Disable by setting this flag to false.
+@@ -38,7 +28,7 @@ target 'RnDiffApp' do
+     #
+     # Note that if you have use_frameworks! enabled, Flipper will not work and
+     # you should disable the next line.
+-    :flipper_configuration => flipper_config,
++    # :flipper_configuration => flipper_config,
+     # An absolute path to your application root.
+     :app_path => "#{Pod::Config.instance.installation_root}/.."
+   )
+diff --git a/RnDiffApp/ios/RnDiffApp-tvOS/Info.plist b/RnDiffApp/ios/RnDiffApp-tvOS/Info.plist
+index 4adc6a422..fa280fcfc 100644
+--- a/RnDiffApp/ios/RnDiffApp-tvOS/Info.plist
++++ b/RnDiffApp/ios/RnDiffApp-tvOS/Info.plist
+@@ -15,7 +15,7 @@
+ 	<key>CFBundlePackageType</key>
+ 	<string>APPL</string>
+ 	<key>CFBundleShortVersionString</key>
+-	<string>$(MARKETING_VERSION)</string>
++	<string>1.0</string>
+ 	<key>CFBundleSignature</key>
+ 	<string>????</string>
+ 	<key>CFBundleVersion</key>
+diff --git a/RnDiffApp/ios/RnDiffApp.xcodeproj/project.pbxproj b/RnDiffApp/ios/RnDiffApp.xcodeproj/project.pbxproj
+index f866a227b..9e74cb094 100644
+--- a/RnDiffApp/ios/RnDiffApp.xcodeproj/project.pbxproj
++++ b/RnDiffApp/ios/RnDiffApp.xcodeproj/project.pbxproj
+@@ -734,7 +734,6 @@
+ 				);
+ 				INFOPLIST_FILE = RnDiffApp/Info.plist;
+ 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+-				MARKETING_VERSION = 1.0;
+ 				OTHER_LDFLAGS = (
+ 					"$(inherited)",
+ 					"-ObjC",
+@@ -757,7 +756,6 @@
+ 				CURRENT_PROJECT_VERSION = 1;
+ 				INFOPLIST_FILE = RnDiffApp/Info.plist;
+ 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+-				MARKETING_VERSION = 1.0;
+ 				OTHER_LDFLAGS = (
+ 					"$(inherited)",
+ 					"-ObjC",
+@@ -786,7 +784,6 @@
+ 				GCC_NO_COMMON_BLOCKS = YES;
+ 				INFOPLIST_FILE = "RnDiffApp-tvOS/Info.plist";
+ 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+-				MARKETING_VERSION = 1.0;
+ 				OTHER_LDFLAGS = (
+ 					"$(inherited)",
+ 					"-ObjC",
+@@ -795,8 +792,6 @@
+ 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RnDiffApp-tvOS";
+ 				PRODUCT_NAME = "$(TARGET_NAME)";
+ 				SDKROOT = appletvos;
+-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+-				SWIFT_VERSION = 5.0;
+ 				TARGETED_DEVICE_FAMILY = 3;
+ 				TVOS_DEPLOYMENT_TARGET = 12.4;
+ 			};
+@@ -818,7 +813,6 @@
+ 				GCC_NO_COMMON_BLOCKS = YES;
+ 				INFOPLIST_FILE = "RnDiffApp-tvOS/Info.plist";
+ 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+-				MARKETING_VERSION = 1.0;
+ 				OTHER_LDFLAGS = (
+ 					"$(inherited)",
+ 					"-ObjC",
+@@ -827,7 +821,6 @@
+ 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RnDiffApp-tvOS";
+ 				PRODUCT_NAME = "$(TARGET_NAME)";
+ 				SDKROOT = appletvos;
+-				SWIFT_VERSION = 5.0;
+ 				TARGETED_DEVICE_FAMILY = 3;
+ 				TVOS_DEPLOYMENT_TARGET = 12.4;
+ 			};
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 4f8b7a82f..770de0458 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,7 +11,7 @@
+   },
+   "dependencies": {
+     "react": "18.2.0",
+-    "react-native": "/Users/dlowder/react-native-tvos-0.71.13-1.tgz"
++    "react-native": "npm:react-native-tvos@0.71.10-0"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.20.0",
+@@ -25,7 +25,7 @@
+     "babel-jest": "^29.2.1",
+     "eslint": "^8.19.0",
+     "jest": "^29.2.1",
+-    "metro-react-native-babel-preset": "0.73.10",
++    "metro-react-native-babel-preset": "0.73.9",
+     "prettier": "^2.4.1",
+     "react-test-renderer": "18.2.0",
+     "typescript": "4.8.4"

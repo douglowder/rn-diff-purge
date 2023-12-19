@@ -1,0 +1,34 @@
+diff --git a/RnDiffApp/ios/RnDiffApp.xcodeproj/project.pbxproj b/RnDiffApp/ios/RnDiffApp.xcodeproj/project.pbxproj
+index f49f39ca6..f866a227b 100644
+--- a/RnDiffApp/ios/RnDiffApp.xcodeproj/project.pbxproj
++++ b/RnDiffApp/ios/RnDiffApp.xcodeproj/project.pbxproj
+@@ -795,6 +795,8 @@
+ 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RnDiffApp-tvOS";
+ 				PRODUCT_NAME = "$(TARGET_NAME)";
+ 				SDKROOT = appletvos;
++				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
++				SWIFT_VERSION = 5.0;
+ 				TARGETED_DEVICE_FAMILY = 3;
+ 				TVOS_DEPLOYMENT_TARGET = 12.4;
+ 			};
+@@ -825,6 +827,7 @@
+ 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.RnDiffApp-tvOS";
+ 				PRODUCT_NAME = "$(TARGET_NAME)";
+ 				SDKROOT = appletvos;
++				SWIFT_VERSION = 5.0;
+ 				TARGETED_DEVICE_FAMILY = 3;
+ 				TVOS_DEPLOYMENT_TARGET = 12.4;
+ 			};
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 1cdfa4db6..4f8b7a82f 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,7 +11,7 @@
+   },
+   "dependencies": {
+     "react": "18.2.0",
+-    "react-native": "npm:react-native-tvos@0.71.11-0"
++    "react-native": "/Users/dlowder/react-native-tvos-0.71.13-1.tgz"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.20.0",
