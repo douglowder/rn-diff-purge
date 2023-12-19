@@ -1,0 +1,13 @@
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 54ef3b80b..4f2f2a333 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -13,7 +13,7 @@
+   "dependencies": {
+     "expo": "^49.0.7",
+     "react": "18.2.0",
+-    "react-native": "npm:react-native-tvos@0.72.6-1"
++    "react-native": "npm:react-native-tvos@0.72.6-0"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.20.0",
