@@ -1,0 +1,105 @@
+diff --git a/RnDiffApp/android/app/src/main/java/com/rndiffapp/MainApplication.kt b/RnDiffApp/android/app/src/main/java/com/rndiffapp/MainApplication.kt
+index 3e63d6f51..612cf0f90 100644
+--- a/RnDiffApp/android/app/src/main/java/com/rndiffapp/MainApplication.kt
++++ b/RnDiffApp/android/app/src/main/java/com/rndiffapp/MainApplication.kt
+@@ -15,11 +15,11 @@ class MainApplication : Application(), ReactApplication {
+ 
+   override val reactNativeHost: ReactNativeHost =
+       object : DefaultReactNativeHost(this) {
+-        override fun getPackages(): List<ReactPackage> {
+-          // Packages that cannot be autolinked yet can be added manually here, for example:
+-          // packages.add(new MyReactNativePackage());
+-          return PackageList(this).packages
+-        }
++        override fun getPackages(): List<ReactPackage> =
++            PackageList(this).packages.apply {
++              // Packages that cannot be autolinked yet can be added manually here, for example:
++              // add(MyReactNativePackage())
++            }
+ 
+         override fun getJSMainModuleName(): String = "index"
+ 
+diff --git a/RnDiffApp/ios/Podfile b/RnDiffApp/ios/Podfile
+index 894749a8b..669d4430d 100644
+--- a/RnDiffApp/ios/Podfile
++++ b/RnDiffApp/ios/Podfile
+@@ -18,27 +18,30 @@ if linkage != nil
+   use_frameworks! :linkage => linkage.to_sym
+ end
+ 
+-target 'RnDiffApp' do
+-  config = use_native_modules!
+-  platform :ios, min_ios_version_supported
++####### For now, only one target at a time can be used in a React Native podfile ########
++####### https://github.com/react-native-tvos/react-native-tvos/issues/619        ########
+ 
+-  use_react_native!(
+-    :path => config[:reactNativePath],
+-    # Enables Flipper.
+-    #
+-    # Note that if you have use_frameworks! enabled, Flipper will not work and
+-    # you should disable the next line.
+-    :flipper_configuration => flipper_config,
+-    # An absolute path to your application root.
+-    :app_path => "#{Pod::Config.instance.installation_root}/.."
+-  )
+-
+-  target 'RnDiffAppTests' do
+-    inherit! :complete
+-    # Pods for testing
+-  end
+-
+-end
++# target 'RnDiffApp' do
++#   config = use_native_modules!
++#   platform :ios, min_ios_version_supported
++# 
++#   use_react_native!(
++#     :path => config[:reactNativePath],
++#     # Enables Flipper.
++#     #
++#     # Note that if you have use_frameworks! enabled, Flipper will not work and
++#     # you should disable the next line.
++#     :flipper_configuration => flipper_config,
++#     # An absolute path to your application root.
++#     :app_path => "#{Pod::Config.instance.installation_root}/.."
++#   )
++# 
++#   target 'RnDiffAppTests' do
++#     inherit! :complete
++#     # Pods for testing
++#   end
++# 
++# end
+ 
+ target 'RnDiffApp-tvOS' do
+   config = use_native_modules!
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 31b254e99..7d40ac2eb 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,18 +11,18 @@
+     "test": "jest"
+   },
+   "dependencies": {
+-    "expo": "^49.0.7",
++    "expo": "^50.0.0-preview.4",
+     "react": "18.2.0",
+-    "react-native": "npm:react-native-tvos@0.73.0-0"
++    "react-native": "npm:react-native-tvos@0.73.1-2"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.20.0",
+     "@babel/preset-env": "^7.20.0",
+     "@babel/runtime": "^7.20.0",
+-    "@react-native/babel-preset": "^0.73.18",
+-    "@react-native/eslint-config": "^0.73.1",
+-    "@react-native/metro-config": "^0.73.2",
+-    "@react-native/typescript-config": "^0.73.1",
++    "@react-native/babel-preset": "0.73.18",
++    "@react-native/eslint-config": "0.73.1",
++    "@react-native/metro-config": "0.73.2",
++    "@react-native/typescript-config": "0.73.1",
+     "@types/react": "^18.2.6",
+     "@types/react-test-renderer": "^18.0.0",
+     "babel-jest": "^29.6.3",
