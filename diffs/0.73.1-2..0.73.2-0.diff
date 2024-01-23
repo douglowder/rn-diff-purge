@@ -1,0 +1,61 @@
+diff --git a/RnDiffApp/metro.config.js b/RnDiffApp/metro.config.js
+index ad8f87b6d..14ebbdfbb 100644
+--- a/RnDiffApp/metro.config.js
++++ b/RnDiffApp/metro.config.js
+@@ -6,6 +6,27 @@ const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
+  *
+  * @type {import('metro-config').MetroConfig}
+  */
+-const config = {};
++const defaultConfig = getDefaultConfig(__dirname);
+ 
+-module.exports = mergeConfig(getDefaultConfig(__dirname), config);
++const config = {
++  // When enabled, the optional code below will allow Metro to resolve
++  // and bundle source files with TV-specific extensions
++  // (e.g., *.ios.tv.tsx, *.android.tv.tsx, *.tv.tsx)
++  //
++  // Metro will still resolve source files with standard extensions
++  // as usual if TV-specific files are not found for a module.
++  //
++  // This code is not enabled by default, since it will impact bundling performance,
++  // but is available for developers who need this capability.
++  //
++  // resolver: process.env.BUILDING_FOR_TV
++  //   ? {
++  //       sourceExts: [].concat(
++  //         defaultConfig.resolver.sourceExts.map(e => `tv.${e}`),
++  //         defaultConfig.resolver.sourceExts,
++  //       ),
++  //     }
++  //   : undefined,
++};
++
++module.exports = mergeConfig(defaultConfig, config);
+diff --git a/RnDiffApp/package.json b/RnDiffApp/package.json
+index 7d40ac2eb..5c5f9f5d4 100644
+--- a/RnDiffApp/package.json
++++ b/RnDiffApp/package.json
+@@ -11,17 +11,17 @@
+     "test": "jest"
+   },
+   "dependencies": {
+-    "expo": "^50.0.0-preview.4",
++    "expo": "^50.0.2",
+     "react": "18.2.0",
+-    "react-native": "npm:react-native-tvos@0.73.1-2"
++    "react-native": "npm:react-native-tvos@0.73.2-0"
+   },
+   "devDependencies": {
+     "@babel/core": "^7.20.0",
+     "@babel/preset-env": "^7.20.0",
+     "@babel/runtime": "^7.20.0",
+-    "@react-native/babel-preset": "0.73.18",
+-    "@react-native/eslint-config": "0.73.1",
+-    "@react-native/metro-config": "0.73.2",
++    "@react-native/babel-preset": "0.73.19",
++    "@react-native/eslint-config": "0.73.2",
++    "@react-native/metro-config": "0.73.3",
+     "@react-native/typescript-config": "0.73.1",
+     "@types/react": "^18.2.6",
+     "@types/react-test-renderer": "^18.0.0",
